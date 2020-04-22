@@ -17,7 +17,7 @@ const html = `<form action='urL'>
 `;
 
 function signUp() {
-  document.title = "signUp";
+  document.title = "Sign Up";
   app.innerHTML = html;
 }
 
