@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/fac19/week8-TeamRocket/issues"
   },
-  "homepage": "https://github.com/fac19/week8-TeamRocket#readme"
+  "homepage": "https://github.com/fac19/week8-TeamRocket#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2",
+    "tape": "^4.13.2"
+  }
 }
