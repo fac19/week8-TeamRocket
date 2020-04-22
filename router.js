@@ -9,7 +9,7 @@ function router() {
       event.target.metaKey === false
     ) {
       event.preventDefault();
-      window.history.pushState(null, null, href);
+      window.history.pushState(null, null, event.target.href);
       navigate(event.target.href);
     }
   }
