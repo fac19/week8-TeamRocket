@@ -1,10 +1,22 @@
 import query from "../query.js";
 
+function dogToggle() {
+  const dogs = document.querySelectorAll(".dog");
+  dogs.forEach((dog) => {
+    console.log(dog);
+    dog.classList.toggle("dog--hidden");
+  });
+}
+
 function createDogElement(dogArr) {
   const app = document.querySelector("#app");
   const pageHeading = document.createElement("h2");
   pageHeading.textContent = "Here are the dogs";
+  const toggle = document.createElement("button");
+  toggle.textContent = "See my dogs";
+  toggle.addEventListener("click", dogToggle);
   app.appendChild(pageHeading);
+  app.append(toggle);
   dogArr.map((dog) => {
     const dogCard = document.createElement("article");
     const name = document.createElement("h3");
@@ -13,6 +25,12 @@ function createDogElement(dogArr) {
     const owner = document.createElement("p");
 
     dogCard.classList.add("dog");
+    if (dog.owner == localStorage.getItem("id")) {
+      dogCard.classList.add("dog--hidden");
+    }
+
+    console.log(dog.owner);
+    console.log(localStorage.getItem("id"));
     name.classList.add("dog__name");
     breed.classList.add("dog__breed");
     photo.classList.add("dog__photo");
