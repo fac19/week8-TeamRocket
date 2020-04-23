@@ -3,7 +3,6 @@ import query from "../query.js";
 function dogToggle() {
   const dogs = document.querySelectorAll(".dog");
   dogs.forEach((dog) => {
-    console.log(dog);
     dog.classList.toggle("dog--hidden");
   });
 }
