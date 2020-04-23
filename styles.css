@@ -2,7 +2,14 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: #a9b3f8; */
+  background-image: linear-gradient(
+    -315deg,
+    hsl(337, 98%, 58%),
+    hsl(356, 100%, 67%),
+    hsl(4, 100%, 68%)
+  );
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
 }
 
 .header {
@@ -13,6 +20,32 @@ body {
 .landing__link {
   display: inline;
   font-size: large;
+}
+
+.header__title {
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.header__slogan {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.header__title img {
+  max-width: 2.6rem;
+}
+
+.main {
+  text-align: center;
+}
+
+.main__dog {
+  max-width: 30%;
 }
 
 .dog--hidden {
@@ -31,4 +64,16 @@ body {
 .dog__photo {
   min-width: 60%;
   max-width: 60%;
+}
+
+@media (max-width: 414px) {
+  .header__title {
+    font-size: 3rem;
+  }
+  .header__slogan {
+    font-size: 1rem;
+  }
+  .main__dog {
+    min-width: 80%;
+  }
 }
