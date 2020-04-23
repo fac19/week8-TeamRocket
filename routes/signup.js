@@ -23,17 +23,17 @@ function signUp({ redirect }) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formObject = Object.fromEntries(formData);
+    fetch("https://dogs-rest.herokuapp.com/v1/users/", {
 
-    fetch("https://dogs-rest.herokuapp.com/v1/users", {
       method: "POST",
       body: JSON.stringify(formObject),
+
       headers: {
         "Content-Type": "application/json",
       },
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         window.localStorage.setItem("id", json.id);
         window.localStorage.setItem("token", json.access_token);
         redirect("/");
