@@ -1,5 +1,3 @@
-import router from "./router.js";
-const routerapp = router();
 const app = document.querySelector("#app");
 
 const html = `<form action='url'>
@@ -18,7 +16,7 @@ const html = `<form action='url'>
 </form>
 `;
 
-function handleFormSubmission() {
+function handleFormSubmission({ redirect }) {
   app.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -35,9 +33,10 @@ function handleFormSubmission() {
       .then((json) => {
         console.log(json);
         window.localStorage.setItem("token", json.access_token);
-        routerapp.redirect("/");
+        redirect("/");
       })
       .catch((error) => {
+        console.log("error in signup!");
         app.querySelector("#message").innerHTML = `<h1>${error} haha</h1>`;
       });
   });

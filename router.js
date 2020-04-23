@@ -8,17 +8,17 @@ function router() {
   function navigate(url) {
     const parsedUrl = new URL(url);
     const callback = routes[parsedUrl.pathname] || routes.default;
+
     callback({ url: parsedUrl, redirect });
-    // console.log(url);
-    console.log(parsedUrl);
-    console.log(callback);
-    //http://127.0.0.1:5501/signup
   }
 
   function redirect(path) {
     const url = window.location.origin + path;
     window.history.pushState(null, null, url);
+    console.log(url);
     navigate(url);
+    // HTMLFormControlsCollection.lo
+    console.log(url);
   }
 
   function clickHandler(event) {
