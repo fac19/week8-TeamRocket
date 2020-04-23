@@ -21,3 +21,8 @@ Tindog is a dating app for dogs to find love and go on doggy play dates.
 ---
 
 ## Contributors
+
+- [jackherizsmith](https://github.com/jackherizsmith)
+- [tacotomek](https://github.com/tacotoemeck)
+- [Lizzy-j](https://github.com/Lizzy-j)
+- [itsina96](https://github.com/itsina96)
