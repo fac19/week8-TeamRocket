@@ -16,6 +16,35 @@ const html = `
 </form>
 `;
 
-function logIn() {}
+function handleFormSubmission() {
+  app.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const formObject = Object.fromEntries(formData);
+
+    fetch("https://fac-dogs.herokuapp.com/v1/users/login", {
+      method: "POST",
+      body: JSON.stringify(formObject),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  });
+}
+
+function logIn() {
+  document.title = "Log In";
+  app.innerHTML = html;
+
+  handleFormSubmission()
+    .then((res) => res.json())
+    .then((json) => {
+      window.localStorage.setItem("token", json.access_token);
+      redirect("/");
+    })
+    .catch((error) => {
+      app.querySelector("#message").innerHTML = `<h1>${error} haha</h1>`;
+    });
+}
 
 export default logIn;
