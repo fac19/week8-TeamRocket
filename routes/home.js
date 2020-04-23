@@ -30,6 +30,7 @@ function createDogElement(dogArr) {
 
     console.log(dog.owner);
     console.log(localStorage.getItem("id"));
+    dogCard.classList.add("dog__card");
     name.classList.add("dog__name");
     breed.classList.add("dog__breed");
     photo.classList.add("dog__photo");
