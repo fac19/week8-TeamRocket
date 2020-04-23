@@ -19,6 +19,7 @@ dogTemplate.innerHTML = /*html*/ `
 
 function home() {
   console.log("here");
+  return dogTemplate;
   const fetchOptions = {
     method: "GET",
   };

@@ -5,7 +5,7 @@ import signUp from "./routes/signup.js";
 import landing from "./routes/landing.js";
 
 const app = router();
-console.log("app.js");
+
 app.get("/home", home);
 
 app.get("/", landing);
