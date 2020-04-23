@@ -16,7 +16,9 @@ const html = /*html*/ `<form class="form">
 </form>
 `;
 
-function handleFormSubmission({ redirect }) {
+function signUp({ redirect }) {
+  document.title = "Sign Up";
+  app.innerHTML = html;
   app.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -31,7 +33,6 @@ function handleFormSubmission({ redirect }) {
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         window.localStorage.setItem("token", json.access_token);
         redirect("/");
       })
@@ -40,13 +41,6 @@ function handleFormSubmission({ redirect }) {
         app.querySelector("#message").innerHTML = `<h1>${error} haha</h1>`;
       });
   });
-}
-
-function signUp() {
-  document.title = "Sign Up";
-  app.innerHTML = html;
-
-  handleFormSubmission();
 }
 
 export default signUp;
