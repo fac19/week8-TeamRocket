@@ -1,3 +1,5 @@
+import router from "./router.js";
+const routerapp = router();
 const app = document.querySelector("#app");
 
 const html = `<form action='url'>
@@ -28,7 +30,16 @@ function handleFormSubmission() {
       headers: {
         "Content-Type": "application/json",
       },
-    });
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        window.localStorage.setItem("token", json.access_token);
+        routerapp.redirect("/");
+      })
+      .catch((error) => {
+        app.querySelector("#message").innerHTML = `<h1>${error} haha</h1>`;
+      });
   });
 }
 
@@ -36,15 +47,7 @@ function signUp() {
   document.title = "Sign Up";
   app.innerHTML = html;
 
-  handleFormSubmission()
-    .then((res) => res.json())
-    .then((json) => {
-      window.localStorage.setItem("token", json.access_token);
-      redirect("/");
-    })
-    .catch((error) => {
-      app.querySelector("#message").innerHTML = `<h1>${error} haha</h1>`;
-    });
+  handleFormSubmission();
 }
 
 export default signUp;
