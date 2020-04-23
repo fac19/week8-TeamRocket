@@ -13,7 +13,6 @@ body {
 .landing__link {
   display: inline;
   font-size: large;
-  height: auto;
 }
 
 .dog--hidden {
