@@ -28,10 +28,13 @@ a.link__add-dog {
 }
 
 a.link__home,
-a.link__add-dog {
+a.link__add-dog,
+.see-dogs__toggle {
   display: inline-block;
   max-width: 20rem;
   width: 30%;
+  /* Setting the same font color once again because .see-dogs__toggle is a button */
+  color: hsl(337, 98%, 58%);
 }
 
 .header {
@@ -84,20 +87,41 @@ a.link__add-dog {
 .dog__card {
   /* display: inline-block;
   flex-direction: column; */
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   /* box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25); */
   border-radius: 10px;
   /* margin: 0 20%;
   padding: 5% 0; */
   max-width: 60%;
   background-color: white;
+  margin-top: 2rem;
+  padding: 1.5rem;
 }
 
 .dog__photo {
-  min-width: 60%;
-  max-width: 60%;
+  min-width: 70%;
+  max-width: 70%;
 }
 
+.see-dogs__toggle {
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  width: 12rem;
+  height: 4rem;
+  font-family: "Ubuntu", sans-serif;
+  cursor: pointer;
+}
+
+footer {
+  min-height: 10%;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media (max-width: 414px) {
   a {
     margin: 0.5rem 1.2rem;
@@ -117,5 +141,9 @@ a.link__add-dog {
   }
   .dog__card {
     min-width: 80%;
+  }
+  .dog__photo {
+    min-width: 90%;
+    max-width: 90%;
   }
 }

@@ -29,10 +29,10 @@ function createDogElement(dogArr) {
   app.append(toggle);
   dogArr.map((dog) => {
     const dogCard = document.createElement("article");
-    const name = document.createElement("h3");
+    const name = document.createElement("h2");
     const breed = document.createElement("p");
     const photo = document.createElement("img");
-    const owner = document.createElement("p");
+    const owner = document.createElement("h3");
 
     dogCard.classList.add("dog");
     if (dog.owner == localStorage.getItem("id")) {
@@ -53,10 +53,10 @@ function createDogElement(dogArr) {
     photo.alt = "photo of " + dog.name;
     owner.innerText = dog.owner;
 
+    dogCard.appendChild(owner);
+    dogCard.appendChild(photo);
     dogCard.appendChild(name);
     dogCard.appendChild(breed);
-    dogCard.appendChild(photo);
-    dogCard.appendChild(owner);
 
     app.appendChild(dogCard);
   });
