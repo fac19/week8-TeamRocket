@@ -2,6 +2,9 @@ import query from "../query.js";
 
 function createDogElement(dogArr) {
   const app = document.querySelector("#app");
+  const pageHeading = document.createElement("h2");
+  pageHeading.textContent = "Here are the dogs";
+  app.appendChild(pageHeading);
   dogArr.map((dog) => {
     const dogCard = document.createElement("article");
     const name = document.createElement("h3");
@@ -34,7 +37,6 @@ function home() {
   fetch("https://dogs-rest.herokuapp.com/v1/dogs/", {})
     .then((response) => response.json())
     .then((dogs) => {
-      console.log(dogs);
       createDogElement(dogs);
     })
     .catch(console.error);
