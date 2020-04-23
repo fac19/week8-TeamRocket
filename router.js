@@ -1,11 +1,12 @@
 function router() {
   function clickHandler(event) {
     if (
-      event.target.tagName === "A" &&
-      event.button === 0 &&
-      event.target.altKey === false &&
-      event.target.shiftKey === false &&
-      event.target.ctrlKey === false &&
+      //fix bug in clickhandler
+      event.target.tagName === "A" ||
+      event.button === 0 ||
+      event.target.altKey === false ||
+      event.target.shiftKey === false ||
+      event.target.ctrlKey === false ||
       event.target.metaKey === false
     ) {
       event.preventDefault();
@@ -18,12 +19,15 @@ function router() {
 
   function get(path, callback) {
     routes[path] = callback;
+    // console.log(routes[path]);
+    console.log(routes);
   }
 
   function navigate(url) {
     const parsedUrl = new URL(url);
     const callback = routes[parsedUrl.pathname];
-    callback({ url: parsedUrl, redirect: redirect });
+    callback({ url: parsedUrl, redirect });
+    console.log(url);
   }
 
   function redirect(path) {
@@ -39,6 +43,7 @@ function router() {
   function listen() {
     window.addEventListener("click", clickHandler);
     window.addEventListener("popstate", popHandler);
+    navigate(window.location);
   }
 
   function close() {
