@@ -2,8 +2,8 @@ const app = document.querySelector("#app");
 const html = /*html*/ `
 <form  class="form">
 
-<label for="username" class="form__label">Username</label>
-<input type="text" name="username" id="username" class="form__input" required>
+<label for="name" class="form__label">Username</label>
+<input type="text" name="name" id="name" class="form__input" required>
 
 <label for="email" class="form__label">Email</label>
 <input type="email" name="email" id="email" class="form__input" required>
@@ -24,7 +24,7 @@ function logIn({ redirect }) {
     const formData = new FormData(e.target);
     const formObject = Object.fromEntries(formData);
 
-    fetch("https://fac-dogs.herokuapp.com/v1/users", {
+    fetch("https://dogs-rest.herokuapp.com/v1/users", {
       method: "POST",
       body: JSON.stringify(formObject),
       headers: {
