@@ -1,3 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #a9b3f8; */
+}
+
+.header {
+  display: block;
+  text-align: center;
+}
+
+.landing__link {
+  display: inline;
+  font-size: large;
+  height: auto;
+}
+
 .dog--hidden {
   display: none;
+}
+
+.dog__card {
+  text-align: center;
+  /* box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25); */
+  border-radius: 2%;
+  margin: 0 20%;
+  padding: 5% 0;
+  background-color: white;
+}
+
+.dog__photo {
+  min-width: 60%;
+  max-width: 60%;
 }

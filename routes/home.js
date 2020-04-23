@@ -3,7 +3,6 @@ import query from "../query.js";
 function dogToggle() {
   const dogs = document.querySelectorAll(".dog");
   dogs.forEach((dog) => {
-    console.log(dog);
     dog.classList.toggle("dog--hidden");
   });
 }
@@ -31,6 +30,7 @@ function createDogElement(dogArr) {
 
     console.log(dog.owner);
     console.log(localStorage.getItem("id"));
+    dogCard.classList.add("dog__card");
     name.classList.add("dog__name");
     breed.classList.add("dog__breed");
     photo.classList.add("dog__photo");
