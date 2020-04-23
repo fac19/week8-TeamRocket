@@ -6,16 +6,28 @@ body {
     -315deg,
     hsl(337, 98%, 58%),
     hsl(356, 100%, 67%),
-    hsl(4, 100%, 68%)
+    hsl(11, 100%, 68%)
   );
   font-family: "Ubuntu", sans-serif;
   height: 100vh;
 }
 
 a {
-  /* text-decoration: none;
-  background-color: white; */
+  display: inline-block;
+  margin: 0 1.2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  color: hsl(337, 98%, 58%);
+  text-decoration: none;
+  background-color: white;
+  border-radius: 5px;
 }
+
+a:hover {
+  background-color: transparent;
+  color: white;
+}
+
 .header {
   display: block;
   text-align: center;
@@ -72,6 +84,9 @@ a {
 }
 
 @media (max-width: 414px) {
+  a {
+    margin: 0.5rem 1.2rem;
+  }
   .header__title {
     font-size: 3rem;
   }
@@ -81,7 +96,6 @@ a {
   .main__dog {
     min-width: 80%;
   }
-
   .dog__card {
     min-width: 80%;
   }

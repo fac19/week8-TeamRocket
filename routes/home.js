@@ -17,7 +17,7 @@ function createDogElement(dogArr) {
 
   toggle.addEventListener("click", () => {
     if (toggle.textContent === "See my doggo") {
-      toggle.textContent = "See other doggo";
+      toggle.textContent = "See other doggos";
     } else {
       toggle.textContent = "See my doggo";
     }
