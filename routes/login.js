@@ -16,7 +16,9 @@ const html = `
 </form>
 `;
 
-function handleFormSubmission() {
+function logIn({ redirect }) {
+  document.title = "Log In";
+  app.innerHTML = html;
   app.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -41,19 +43,19 @@ function handleFormSubmission() {
   });
 }
 
-function logIn() {
-  document.title = "Log In";
-  app.innerHTML = html;
+// function logIn() {
+//   document.title = "Log In";
+//   app.innerHTML = html;
 
-  handleFormSubmission();
-  // .then((res) => res.json())
-  // .then((json) => {
-  //   window.localStorage.setItem("token", json.access_token);
-  //   redirect("/");
-  // })
-  // .catch((error) => {
-  //   app.querySelector("#message").innerHTML = `<h1>${error} haha</h1>`;
-  // });
-}
+//   handleFormSubmission();
+//   // .then((res) => res.json())
+//   // .then((json) => {
+//   //   window.localStorage.setItem("token", json.access_token);
+//   //   redirect("/");
+//   // })
+//   // .catch((error) => {
+//   //   app.querySelector("#message").innerHTML = `<h1>${error} haha</h1>`;
+//   // });
+// }
 
 export default logIn;
