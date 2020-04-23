@@ -1,33 +1,43 @@
 import query from "../query.js";
 
-const pageTemplate = document.createElement("template");
-pageTemplate.innerHTML = /*html*/ `
-<h2 class="home__title">All the dogs</h2>
-    <section id="dogList">
-    
-    </section>
-`;
+function createDogElement(dogArr) {
+  const app = document.querySelector("#app");
+  dogArr.map((dog) => {
+    const dogCard = document.createElement("article");
+    const name = document.createElement("h3");
+    const breed = document.createElement("p");
+    const photo = document.createElement("img");
+    const owner = document.createElement("p");
 
-const dogTemplate = document.createElement("template");
-dogTemplate.innerHTML = /*html*/ `
-<article class="dog">
-    <h3 class="dog__name"></h3>
-    <img class="dog__photo" src="" alt="">
-    <p class="dog__owner"></p>
-</article>
-`;
+    dogCard.classList.add("dog");
+    name.classList.add("dog__name");
+    breed.classList.add("dog__breed");
+    photo.classList.add("dog__photo");
+    owner.classList.add("dog__owner");
+
+    name.innerText = dog.name;
+    breed.innerText = dog.breed;
+    photo.src = dog.image;
+    photo.alt = "photo of " + dog.name;
+    owner.innerText = dog.owner;
+
+    dogCard.appendChild(name);
+    dogCard.appendChild(breed);
+    dogCard.appendChild(photo);
+    dogCard.appendChild(owner);
+
+    app.appendChild(dogCard);
+  });
+}
 
 function home() {
-  console.log("here");
-  return dogTemplate;
-  const fetchOptions = {
-    method: "GET",
-  };
-  query("https://dogs-rest.herokuapp.com/v1/dogs/", fetchOptions).then(
-    (response) => {
-      console.log(response);
-    }
-  );
+  fetch("https://dogs-rest.herokuapp.com/v1/dogs/", {})
+    .then((response) => response.json())
+    .then((dogs) => {
+      console.log(dogs);
+      createDogElement(dogs);
+    })
+    .catch(console.error);
 }
 
 export default home;

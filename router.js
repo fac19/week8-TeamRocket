@@ -1,5 +1,4 @@
 function router() {
-  console.log("router");
   function clickHandler(event) {
     if (
       //fix bug in clickhandler
@@ -20,15 +19,12 @@ function router() {
 
   function get(path, callback) {
     routes[path] = callback;
-    // console.log(routes[path]);
-    console.log(routes);
   }
 
   function navigate(url) {
     const parsedUrl = new URL(url);
     const callback = routes[parsedUrl.pathname];
     callback({ url: parsedUrl, redirect });
-    console.log(url);
   }
 
   function redirect(path) {
