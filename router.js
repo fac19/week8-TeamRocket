@@ -1,12 +1,13 @@
 function router() {
+  console.log("router");
   function clickHandler(event) {
     if (
-      event.target.tagName === "A" &&
-      event.button === 0 &&
-      event.target.altKey === false &&
-      event.target.shiftKey === false &&
-      event.target.ctrlKey === false &&
-      event.target.metaKey === false
+      event.target.tagName === "A" ||
+      !event.button ||
+      !event.target.altKey ||
+      !event.target.shiftKey ||
+      !event.target.ctrlKey ||
+      !event.target.metaKey
     ) {
       event.preventDefault();
       window.history.pushState(null, null, event.target.href);
