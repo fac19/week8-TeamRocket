@@ -18,6 +18,8 @@ const html = /*html*/ `<form class="form">
 
 function addDog({ redirect }) {
   const token = localStorage.getItem("token");
+  console.log("token : " + token);
+
   if (token) {
     document.title = "Add a dog";
     app.innerHTML = html;
@@ -27,16 +29,17 @@ function addDog({ redirect }) {
       const formObject = Object.fromEntries(formData);
       console.log("addDog -> formObject", formObject);
 
-      fetch("https://fac-dogs.herokuapp.com/v1/dogs", {
+      fetch("https://dogs-rest.herokuapp.com/v1/dogs", {
         method: "POST",
         body: JSON.stringify(formObject),
         headers: {
-          authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+          "Content-type": "application/json",
         },
       })
         .then((res) => res.json())
         .then((json) => {
+          console.log(json);
           redirect("/");
         })
         .catch((error) => {

@@ -2,6 +2,9 @@ const app = document.querySelector("#app");
 const html = /*html*/ `
 <form  class="form">
 
+<label for="name" class="form__label">Username</label>
+<input type="text" name="name" id="name" class="form__input" required>
+
 <label for="email" class="form__label">Email</label>
 <input type="email" name="email" id="email" class="form__input" required>
 
