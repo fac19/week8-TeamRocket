@@ -2,7 +2,7 @@ const app = document.querySelector("#app");
 
 const html = `<form action='url'>
 
-<label for="name">Name</label>
+<label for="name">Username</label>
 <input type="text name="name" id="name" required>
 
 <label for="email">Email</label>
