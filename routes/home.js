@@ -12,8 +12,17 @@ function createDogElement(dogArr) {
   const pageHeading = document.createElement("h2");
   pageHeading.textContent = "Here are the dogs";
   const toggle = document.createElement("button");
-  toggle.textContent = "See my dogs";
+  toggle.textContent = "See my doggo";
   toggle.addEventListener("click", dogToggle);
+
+  toggle.addEventListener("click", () => {
+    if (toggle.textContent === "See my doggo") {
+      toggle.textContent = "See other doggo";
+    } else {
+      toggle.textContent = "See my doggo";
+    }
+  });
+
   app.appendChild(pageHeading);
   app.append(toggle);
   dogArr.map((dog) => {
