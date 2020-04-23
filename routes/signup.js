@@ -1,18 +1,18 @@
 const app = document.querySelector("#app");
 
-const html = `<form action='url'>
+const html = /*html*/ `<form class="form">
 
-<label for="name">Username</label>
-<input type="text name="name" id="name" required>
+<label for="name" class="form__label">Username</label>
+<input type="text name="name" id="name" class="form__input" required>
 
-<label for="email">Email</label>
-<input type="email" name="email" id="email" required>
+<label for="email" class="form__label">Email</label>
+<input type="email" name="email" id="email" class="form__input" required>
 
-<label for="password">Password</label>
-<input type="password" name="password" id="password" required>
+<label for="password" class="form__label" >Password</label>
+<input type="password" name="password" id="password" class="form__input" required>
 
-<button type="submit">Submit</button>
-<div id="message"></div>
+<button type="submit" class="submit-btn">Submit</button>
+<div id="message" class="form__error"></div>
 </form>
 `;
 
