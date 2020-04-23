@@ -23,8 +23,8 @@ function signUp({ redirect }) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formObject = Object.fromEntries(formData);
-    console.log(formObject);
     fetch("https://dogs-rest.herokuapp.com/v1/users/", {
+
       method: "POST",
       body: JSON.stringify(formObject),
 
@@ -34,7 +34,7 @@ function signUp({ redirect }) {
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
+        window.localStorage.setItem("id", json.id);
         window.localStorage.setItem("token", json.access_token);
         redirect("/");
       })

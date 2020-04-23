@@ -34,6 +34,7 @@ function logIn({ redirect }) {
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
+        window.localStorage.setItem("id", json.id);
         window.localStorage.setItem("token", json.access_token);
         redirect("/");
       })
