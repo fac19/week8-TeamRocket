@@ -9,6 +9,14 @@ Tindog is a dating app for dogs to find love and go on doggy play dates.
 ### User stories
 
 - As a dog, I want to go on doggy dates so I can meet the love of my life
+- As a user, I want to be able to update my profile so I can pull all the ladies
+- As an owner, I want to be able to delete my dog's profile as I no longer require the app.
+
+---
+
+## About the API
+
+The project uses the following API: [Dog rest api](https://github.com/oliverjam/dog-rest-api)
 
 ---
 
@@ -34,6 +42,18 @@ Tindog is a dating app for dogs to find love and go on doggy play dates.
 
 - [ ] Buttons to delete existing resources (for logged in users)
 - [ ] Form for updating existing resources (for logged in users)
+
+---
+
+## What went well
+
+- Working as a team :)
+- Planning the project
+- Debugging
+
+## What didn't go well
+
+- Debugging
 
 ---
 
