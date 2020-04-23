@@ -1,6 +1,7 @@
 function router() {
   function clickHandler(event) {
     if (
+      //fix bug in clickhandler
       event.target.tagName === "A" ||
       event.button === 0 ||
       event.target.altKey === false ||
