@@ -15,3 +15,7 @@ const html = `
 <div id="message"></div>
 </form>
 `;
+
+function logIn() {}
+
+export default logIn;
