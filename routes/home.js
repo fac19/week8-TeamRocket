@@ -10,9 +10,11 @@ function dogToggle() {
 function createDogElement(dogArr) {
   const app = document.querySelector("#app");
   const pageHeading = document.createElement("h2");
-  pageHeading.textContent = "Here are the dogs";
+  pageHeading.textContent = "Let the search begin...👀";
+  pageHeading.classList.add("see_dogs__heading");
   const toggle = document.createElement("button");
   toggle.textContent = "See my doggo";
+  toggle.classList.add("see-dogs__toggle");
   toggle.addEventListener("click", dogToggle);
 
   toggle.addEventListener("click", () => {

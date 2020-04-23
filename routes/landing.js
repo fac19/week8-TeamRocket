@@ -13,9 +13,7 @@ function showLinks() {
   } else {
     return `
     <a href="/signup">Sign up</a>
-    <a href="/login">Log in</a><br>
-    <a class="link__home" href="/home">See other dogs</a><br>
-    <a class="link__add-dog" href="/add-dog">Add my dog</a>
+    <a href="/login">Log in</a>
     `;
   }
 }
