@@ -1,7 +1,14 @@
+:root {
+  --tindog-red: hsl(337, 98%, 58%);
+  --tindog-blush: hsl(356, 100%, 67%);
+  --tindog-orange: hsl(11, 100%, 68%);
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Why can't we use css variable in linear-gradient? */
   background-image: linear-gradient(
     -315deg,
     hsl(337, 98%, 58%),
@@ -9,15 +16,16 @@ body {
     hsl(11, 100%, 68%)
   );
   font-family: "Ubuntu", sans-serif;
-  height: 100vh;
+  height: 120vh;
 }
 
-a {
+a,
+.submit-btn {
   display: inline-block;
   margin: 1rem 1.2rem;
   padding: 0.5rem 2rem;
   font-size: 1.5rem;
-  color: hsl(337, 98%, 58%);
+  color: var(--tindog-red);
   text-decoration: none;
   background-color: white;
   border-radius: 5px;
@@ -34,7 +42,7 @@ a.link__add-dog,
   max-width: 20rem;
   width: 30%;
   /* Setting the same font color once again because .see-dogs__toggle is a button */
-  color: hsl(337, 98%, 58%);
+  color: var(--tindog-red);
 }
 
 .header {
@@ -74,6 +82,36 @@ a.link__add-dog,
   max-width: 30%;
 }
 
+.form__label {
+  color: white;
+  margin: 0.4rem;
+  font-size: 1.3rem;
+  display: block;
+}
+
+.form__input {
+  min-width: 17rem;
+  min-height: 1.6rem;
+  border-radius: 5px;
+  border: none;
+}
+
+input {
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
+.submit-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.09rem;
+  font-weight: bold;
+}
+
 .dog--hidden {
   display: none;
 }
@@ -85,14 +123,9 @@ a.link__add-dog,
 }
 
 .dog__card {
-  /* display: inline-block;
-  flex-direction: column; */
   margin-left: auto;
   margin-right: auto;
-  /* box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25); */
   border-radius: 10px;
-  /* margin: 0 20%;
-  padding: 5% 0; */
   max-width: 60%;
   background-color: white;
   margin-top: 2rem;
@@ -102,6 +135,15 @@ a.link__add-dog,
 .dog__photo {
   min-width: 70%;
   max-width: 70%;
+}
+
+.dog__name {
+  font-size: 2rem;
+  color: var(--tindog-blush);
+}
+
+.dog__breed {
+  font-size: 1.2rem;
 }
 
 .see-dogs__toggle {
@@ -122,6 +164,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 @media (max-width: 414px) {
   a {
     margin: 0.5rem 1.2rem;
@@ -135,6 +178,9 @@ footer {
   }
   .header__slogan {
     font-size: 1rem;
+  }
+  .form__input {
+    min-width: 10rem;
   }
   .main__dog {
     min-width: 80%;
