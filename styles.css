@@ -47,6 +47,7 @@ a.link__add-dog,
 
 .navbar {
   position: fixed;
+  display: none;
   width: 100vw;
   display: flex;
   justify-content: space-between;
