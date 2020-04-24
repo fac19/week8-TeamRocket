@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "servor": "servor"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/fac19/week8-TeamRocket/issues"
   },
-  "homepage": "https://github.com/fac19/week8-TeamRocket#readme"
+  "homepage": "https://github.com/fac19/week8-TeamRocket#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3",
+    "servor": "^3.2.0",
+    "supertest": "^4.0.2",
+    "tape": "^4.13.2"
+  }
 }
