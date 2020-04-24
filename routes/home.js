@@ -54,6 +54,11 @@ function createDogElement(dogArr) {
     breed.innerText = dog.breed;
     photo.src = dog.image;
     photo.alt = "photo of " + dog.name;
+
+    photo.onerror = function() { 
+      photo.src = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"; 
+    }
+
     owner.innerText = dog.owner;
 
     dogCard.appendChild(owner);
