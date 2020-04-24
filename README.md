@@ -1,4 +1,4 @@
-# Tindog
+# Tindog - for chasing tail
 https://mytindog.netlify.app/
 
 ## Project brief
@@ -17,8 +17,8 @@ Tindog is a dating app for dogs to find love and go on doggy play dates.
 ### User stories
 
 - As a dog, I want to go on doggy dates so I can meet the love of my life
-- As a user, I want to be able to update my profile so I can pull all the ladies
-- As an owner, I want to be able to delete my dog's profile as I no longer require the app.
+- As a user, I want to be able to update my profile so I can *unleash* my potential
+- As an owner, I want to be able to delete my dog's profile once they've found true love.
 
 ---
 
