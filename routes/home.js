@@ -10,7 +10,7 @@ function dogToggle() {
 function createDogElement(dogArr) {
   const app = document.querySelector("#app");
   const pageHeading = document.createElement("h2");
-  pageHeading.textContent = "Let the search begin...👀";
+  pageHeading.textContent = "Bark up the right tree today 🦴";
   pageHeading.classList.add("see_dogs__heading");
   const toggle = document.createElement("button");
   toggle.textContent = "See my doggo";
