@@ -44,19 +44,4 @@ function logIn({ redirect }) {
   });
 }
 
-// function logIn() {
-//   document.title = "Log In";
-//   app.innerHTML = html;
-
-//   handleFormSubmission();
-//   // .then((res) => res.json())
-//   // .then((json) => {
-//   //   window.localStorage.setItem("token", json.access_token);
-//   //      redirect("/");
-//   // })
-//   // .catch((error) => {
-//   //   app.querySelector("#message").innerHTML = `<h1>${error} haha</h1>`;
-//   // });
-// }
-
 export default logIn;

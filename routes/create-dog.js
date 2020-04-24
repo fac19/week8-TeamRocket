@@ -27,7 +27,6 @@ function addDog({ redirect }) {
       e.preventDefault();
       const formData = new FormData(e.target);
       const formObject = Object.fromEntries(formData);
-      console.log("addDog -> formObject", formObject);
 
       fetch("https://dogs-rest.herokuapp.com/v1/dogs", {
         method: "POST",
