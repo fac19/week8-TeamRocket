@@ -45,6 +45,42 @@ a.link__add-dog,
   color: var(--tindog-red);
 }
 
+.navbar {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  top: 0;
+  right: 0;
+  background-color: hsl(217, 0%, 14%);
+}
+
+#navbar__a {
+  background-color: transparent;
+  margin: 0;
+  margin-left: 3rem;
+  padding: 0;
+}
+
+#navbar__logo {
+  height: 2rem;
+  background-color: none;
+}
+
+.navbar__links--logout--link {
+  margin: 0.1rem;
+  font-size: 0.9rem;
+  color: white;
+  background-color: hsl(217, 0%, 14%);
+}
+
+.navbar__links--logout--link:hover{
+  color: hsl(217, 0%, 14%);
+  background-color: white;
+}
+
 .header {
   display: block;
   text-align: center;

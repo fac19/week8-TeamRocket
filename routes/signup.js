@@ -1,6 +1,6 @@
 const app = document.querySelector("#app");
 
-const html = /*html*/ `<form class="form">
+const html = `<form class="form">
 
 <label for="name" class="form__label">Username:</label>
 <input type="text" name="name" id="name" class="form__input" required>

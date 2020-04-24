@@ -52,7 +52,7 @@ function logIn({ redirect }) {
 //   // .then((res) => res.json())
 //   // .then((json) => {
 //   //   window.localStorage.setItem("token", json.access_token);
-//   //   redirect("/");
+//   //      redirect("/");
 //   // })
 //   // .catch((error) => {
 //   //   app.querySelector("#message").innerHTML = `<h1>${error} haha</h1>`;

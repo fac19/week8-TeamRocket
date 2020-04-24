@@ -1,4 +1,7 @@
 import query from "../query.js";
+const logoutLink = document.querySelector("#navbar__links--logout");
+
+logoutLink.innerHTML = `<a href="/logout" class="navbar__links--logout--link">LOGOUT</a>`;
 
 function dogToggle() {
   const dogs = document.querySelectorAll(".dog");
