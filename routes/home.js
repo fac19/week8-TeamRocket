@@ -1,4 +1,7 @@
 import query from "../query.js";
+const logoutLink = document.querySelector('#navbar__links--logout');
+
+// logoutLink.innerHTML = `<a href="#" class="navbar__links--logout--link">LOGOUT</a>`;
 
 function dogToggle() {
   const dogs = document.querySelectorAll(".dog");
@@ -39,8 +42,8 @@ function createDogElement(dogArr) {
       dogCard.classList.add("dog--hidden");
     }
 
-    console.log(dog.owner);
-    console.log(localStorage.getItem("id"));
+    // console.log(dog.owner);
+    // console.log(localStorage.getItem("id"));
     dogCard.classList.add("dog__card");
     name.classList.add("dog__name");
     breed.classList.add("dog__breed");
