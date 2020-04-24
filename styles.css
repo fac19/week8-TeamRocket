@@ -1,8 +1,48 @@
+:root {
+  --tindog-red: hsl(337, 98%, 58%);
+  --tindog-blush: hsl(356, 100%, 67%);
+  --tindog-orange: hsl(11, 100%, 68%);
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: #a9b3f8; */
+  /* Why can't we use css variable in linear-gradient? */
+  background-image: linear-gradient(
+    -315deg,
+    hsl(337, 98%, 58%),
+    hsl(356, 100%, 67%),
+    hsl(11, 100%, 68%)
+  );
+  font-family: "Ubuntu", sans-serif;
+  height: 120vh;
+}
+
+a,
+.submit-btn {
+  display: inline-block;
+  margin: 1rem 1.2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  color: var(--tindog-red);
+  text-decoration: none;
+  background-color: white;
+  border-radius: 5px;
+}
+
+a.link__add-dog {
+  margin-top: 0;
+}
+
+a.link__home,
+a.link__add-dog,
+.see-dogs__toggle {
+  display: inline-block;
+  max-width: 20rem;
+  width: 30%;
+  /* Setting the same font color once again because .see-dogs__toggle is a button */
+  color: var(--tindog-red);
 }
 
 .header {
@@ -15,20 +55,141 @@ body {
   font-size: large;
 }
 
+.header__title {
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.header__slogan {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  font-style: italic;
+  color: hsl(217, 0%, 14%);
+}
+
+.header__title img {
+  max-width: 2.6rem;
+}
+
+.main {
+  text-align: center;
+}
+
+.main__dog {
+  max-width: 30%;
+}
+
+.form__label {
+  color: white;
+  margin: 0.4rem;
+  font-size: 1.3rem;
+  display: block;
+}
+
+.form__input {
+  min-width: 17rem;
+  min-height: 1.6rem;
+  border-radius: 5px;
+  border: none;
+}
+
+input {
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
+.submit-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.09rem;
+  font-weight: bold;
+}
+
 .dog--hidden {
   display: none;
 }
 
+.see_dogs__heading {
+  color: white;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+
 .dog__card {
-  text-align: center;
-  /* box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25); */
-  border-radius: 2%;
-  margin: 0 20%;
-  padding: 5% 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  max-width: 60%;
   background-color: white;
+  margin-top: 2rem;
+  padding: 1.5rem;
 }
 
 .dog__photo {
-  min-width: 60%;
-  max-width: 60%;
+  min-width: 70%;
+  max-width: 70%;
+}
+
+.dog__name {
+  font-size: 2rem;
+  color: var(--tindog-blush);
+}
+
+.dog__breed {
+  font-size: 1.2rem;
+}
+
+.see-dogs__toggle {
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  width: 12rem;
+  height: 4rem;
+  font-family: "Ubuntu", sans-serif;
+  cursor: pointer;
+}
+
+footer {
+  min-height: 10%;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 414px) {
+  a {
+    margin: 0.5rem 1.2rem;
+  }
+  a.link__home,
+  a.link__add-dog {
+    width: 70%;
+  }
+  .header__title {
+    font-size: 3rem;
+  }
+  .header__slogan {
+    font-size: 1rem;
+  }
+  .form__input {
+    min-width: 10rem;
+  }
+  .main__dog {
+    min-width: 80%;
+  }
+  .dog__card {
+    min-width: 80%;
+  }
+  .dog__photo {
+    min-width: 90%;
+    max-width: 90%;
+  }
 }

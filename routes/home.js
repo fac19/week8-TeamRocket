@@ -10,18 +10,29 @@ function dogToggle() {
 function createDogElement(dogArr) {
   const app = document.querySelector("#app");
   const pageHeading = document.createElement("h2");
-  pageHeading.textContent = "Here are the dogs";
+  pageHeading.textContent = "Bark up the right tree today 🦴";
+  pageHeading.classList.add("see_dogs__heading");
   const toggle = document.createElement("button");
-  toggle.textContent = "See my dogs";
+  toggle.textContent = "See my doggo";
+  toggle.classList.add("see-dogs__toggle");
   toggle.addEventListener("click", dogToggle);
+
+  toggle.addEventListener("click", () => {
+    if (toggle.textContent === "See my doggo") {
+      toggle.textContent = "See other doggos";
+    } else {
+      toggle.textContent = "See my doggo";
+    }
+  });
+
   app.appendChild(pageHeading);
   app.append(toggle);
   dogArr.map((dog) => {
     const dogCard = document.createElement("article");
-    const name = document.createElement("h3");
+    const name = document.createElement("h2");
     const breed = document.createElement("p");
     const photo = document.createElement("img");
-    const owner = document.createElement("p");
+    const owner = document.createElement("h3");
 
     dogCard.classList.add("dog");
     if (dog.owner == localStorage.getItem("id")) {
@@ -42,10 +53,10 @@ function createDogElement(dogArr) {
     photo.alt = "photo of " + dog.name;
     owner.innerText = dog.owner;
 
+    dogCard.appendChild(owner);
+    dogCard.appendChild(photo);
     dogCard.appendChild(name);
     dogCard.appendChild(breed);
-    dogCard.appendChild(photo);
-    dogCard.appendChild(owner);
 
     app.appendChild(dogCard);
   });

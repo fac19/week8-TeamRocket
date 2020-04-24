@@ -7,13 +7,13 @@ function landing() {
 function showLinks() {
   if (localStorage.getItem("token")) {
     return `
-      <a href="/home">Home</a>
+    <a class="link__home" href="/home">See other dogs</a><br>
+    <a class="link__add-dog" href="/add-dog">Add my dog</a>
     `;
   } else {
     return `
     <a href="/signup">Sign up</a>
     <a href="/login">Log in</a>
-    <a href="/home">Home</a>
     `;
   }
 }
