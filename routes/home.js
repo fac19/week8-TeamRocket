@@ -35,7 +35,7 @@ function createDogElement(dogArr) {
     const name = document.createElement("h2");
     const breed = document.createElement("p");
     const photo = document.createElement("img");
-    const owner = document.createElement("a");
+    const owner = document.createElement("button");
 
     dogCard.classList.add("dog");
     if (dog.owner == localStorage.getItem("id")) {
@@ -55,14 +55,13 @@ function createDogElement(dogArr) {
     photo.src = dog.image;
     photo.alt = "photo of " + dog.name;
 
-
-    photo.onerror = function() { 
-      photo.src = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"; 
-    }
+    photo.onerror = function() {
+      photo.src =
+        "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg";
+    };
 
     owner.innerText = dog.owner;
 
-  
     owner.innerText = "Contact owner";
     owner.addEventListener("click", (event) => {
       event.preventDefault;
@@ -73,7 +72,6 @@ function createDogElement(dogArr) {
         })
         .catch(console.error);
     });
-
 
     dogCard.appendChild(owner);
     dogCard.appendChild(photo);
