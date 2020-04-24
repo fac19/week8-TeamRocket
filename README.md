@@ -1,4 +1,7 @@
-# Tindog
+# :fire: Tindog - for chasing tail
+https://mytindog.netlify.app/
+
+![front page](https://i.imgur.com/zpAQcZi.png)
 
 ## Project brief
 
@@ -6,11 +9,19 @@ Tindog is a dating app for dogs to find love and go on doggy play dates.
 
 ![Lady and the tramp gif](https://media.giphy.com/media/x28cIQSn19Tbi/giphy.gif)
 
+## Written by
+[Meet the team](https://www.youtube.com/watch?v=ZBVrPWwSlRM)
+
+- [Jack](https://github.com/jackherizsmith)
+- [Tom](https://github.com/tacotoemeck)
+- [Lizzy](https://github.com/Lizzy-j)
+- [Ina](https://github.com/itsina96)
+
 ### User stories
 
 - As a dog, I want to go on doggy dates so I can meet the love of my life
-- As a user, I want to be able to update my profile so I can pull all the ladies
-- As an owner, I want to be able to delete my dog's profile as I no longer require the app.
+- As a user, I want to be able to update my profile so I can *unleash* my potential
+- As an owner, I want to be able to delete my dog's profile once they've found true love.
 
 ---
 
@@ -55,11 +66,3 @@ The project uses the following API: [Dog rest api](https://github.com/oliverjam/
 
 - Debugging
 
----
-
-## Contributors
-
-- [jackherizsmith](https://github.com/jackherizsmith)
-- [tacotomek](https://github.com/tacotoemeck)
-- [Lizzy-j](https://github.com/Lizzy-j)
-- [itsina96](https://github.com/itsina96)
