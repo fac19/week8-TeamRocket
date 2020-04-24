@@ -1,5 +1,7 @@
-# Tindog - for chasing tail
+# :fire: Tindog - for chasing tail
 https://mytindog.netlify.app/
+
+![front page](https://imgur.com/zpAQcZi)
 
 ## Project brief
 
