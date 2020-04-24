@@ -1,10 +1,18 @@
 # Tindog
+https://mytindog.netlify.app/
 
 ## Project brief
 
 Tindog is a dating app for dogs to find love and go on doggy play dates.
 
 ![Lady and the tramp gif](https://media.giphy.com/media/x28cIQSn19Tbi/giphy.gif)
+
+## Written by
+
+- [Jack](https://github.com/jackherizsmith)
+- [Tom](https://github.com/tacotoemeck)
+- [Lizzy](https://github.com/Lizzy-j)
+- [Ina](https://github.com/itsina96)
 
 ### User stories
 
@@ -55,11 +63,3 @@ The project uses the following API: [Dog rest api](https://github.com/oliverjam/
 
 - Debugging
 
----
-
-## Contributors
-
-- [jackherizsmith](https://github.com/jackherizsmith)
-- [tacotomek](https://github.com/tacotoemeck)
-- [Lizzy-j](https://github.com/Lizzy-j)
-- [itsina96](https://github.com/itsina96)
