@@ -1,5 +1,5 @@
 # Tindog
-(Visit on netifly)https://mytindog.netlify.app/#
+()https://mytindog.netlify.app/
 
 ## Project brief
 
