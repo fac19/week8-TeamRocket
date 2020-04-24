@@ -128,3 +128,82 @@ Split into several parts:
 
 # Any questions?
 ![image alt](https://media1.tenor.com/images/3d19e6dd3f667929d16c606295787439/tenor.gif?itemid=15868934)
+
+
+# Week 8 SGC
+
+## Stop
+
+
+## Go
+- Take breaks when debugging 
+- Modularising and abstracting from the start
+- Try other solutions, besides tutorial (?)
+- Use next week to re-energise
+
+## Continue
+ - Swap pairs
+ - Being an awesome artist
+ - mobbing done right ( just enough and when neccessary )
+ - Great comunication
+ - Great clarity on issues
+
+
+# Minutes
+
+## Go
+### Take breaks when debugging
+Liz: could have done with a break from time to tim to get clarity
+Tom: hard to break free in the moment, but almost always right
+Jack: home.js case in point
+Tom: could try pomodoro
+Jack: could work nicely with 20-20-20 screen rule
+
+### M & A
+Jack: would love ot focus on this myself from now on, one thing per function, one page per file
+Ina: really helpful
+Tom: React works in modules so helpful to think in this way
+
+### Try other suggestions besides tutorials
+Tom: Would have been a struggle without tutorial, but we can learn more from exporing things we don't know. Use as base.
+Lizzy: Can be difficult to build when unsure of what it is, so find right balance. Still need to follow the steps. How else could we do it?
+Tom: Ivan's talk about learning to learn. "The most counterintuitive truth is having a go if you don't know you're right".
+Ina: I get obsessed with best practice, so if code doesn't work get stuck without Google.
+Tom: relying only on workshops (e.g. Udemy) limits learning time.
+Jack: maybe always discount own first idea about how to do something??!
+Lizzy: how will projects relate to what we've learned in workshops?
+Jack: most mentors seem to have forgotten the course material
+Tom: we're being forced to use different technologies so we can get used to new things - every employer will have different software needs.
+
+
+### Use next week to re-energise
+Jack: good to make sure we have energy to do justice to our work in the second half
+Tom: The economy is tough and we need to try hard to give ourselves the best chance at getting out first job. It's a balance
+
+## Continue
+### Pairing
+Ina: so ne=ice to pair with everyone and good balance in coding
+
+### Being an awesome artist
+Jack: Great to have a nice looking website, makes a world of difference
+Liz: So nice to work with someone who genuinely cares about look and feel of a project
+Ina: great to de-stress after coding
+
+### Mobbing done right
+Tom: great job mobbing. One week went as wrong as it could before, this was awesome. we kept it brief, high-level
+
+### Great comms
+Jack: Nice to trust each other and have each others' backs, say what we want and support each others' learnings.
+Tom: Made working on the project a dream
+Lizzy: great at listening to opinions and suggestions on code. Great balance in contributions. Willingness to try new things.
+
+
+### Great issues
+Jack: Clear and distinct issues
+Lizzy: HackMD helped, writing everything first to examine how they differed with milestones. 
+Jack: Separating issues by file helps. It's hard to learn anything from merge conflicts
+Lizzy: Make sure you stay diplomatic and team-first mindset.
+Tom: Great to avoid merge conflicts, issues were really clear.
+
+### Whackiness
+Jack: So fun to bring fun into projects whilst we can.
