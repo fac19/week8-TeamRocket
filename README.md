@@ -1,4 +1,5 @@
 # :fire: Tindog - for chasing tail
+
 https://mytindog.netlify.app/
 
 ![front page](https://i.imgur.com/zpAQcZi.png)
@@ -10,6 +11,7 @@ Tindog is a dating app for dogs to find love and go on doggy play dates.
 ![Lady and the tramp gif](https://media.giphy.com/media/x28cIQSn19Tbi/giphy.gif)
 
 ## Written by
+
 [Meet the team](https://www.youtube.com/watch?v=ZBVrPWwSlRM)
 
 - [Jack](https://github.com/jackherizsmith)
@@ -20,7 +22,7 @@ Tindog is a dating app for dogs to find love and go on doggy play dates.
 ### User stories
 
 - As a dog, I want to go on doggy dates so I can meet the love of my life
-- As a user, I want to be able to update my profile so I can *unleash* my potential
+- As a user, I want to be able to update my profile so I can _unleash_ my potential
 - As an owner, I want to be able to delete my dog's profile once they've found true love.
 
 ---
@@ -43,11 +45,11 @@ The project uses the following API: [Dog rest api](https://github.com/oliverjam/
 
 ## Acceptance criteria
 
-- [ ] A single-page app (only one HTML file)
-- [ ] Client-side routing
+- [x] A single-page app (only one HTML file)
+- [x] Client-side routing
 - [ ] Accessible signup/login forms
-- [ ] Token-based authentication (storing token in localStorage)
-- [ ] Form for adding new resources (only for logged in users)
+- [x] Token-based authentication (storing token in localStorage)
+- [x] Form for adding new resources (only for logged in users)
 
 ### Stretch criteria
 
@@ -65,4 +67,3 @@ The project uses the following API: [Dog rest api](https://github.com/oliverjam/
 ## What didn't go well
 
 - Debugging
-
