@@ -32,26 +32,35 @@ function createDogElement(dogArr) {
     const name = document.createElement("h2");
     const breed = document.createElement("p");
     const photo = document.createElement("img");
-    const owner = document.createElement("h3");
+    const owner = document.createElement("a");
 
     dogCard.classList.add("dog");
     if (dog.owner == localStorage.getItem("id")) {
       dogCard.classList.add("dog--hidden");
     }
 
-    console.log(dog.owner);
-    console.log(localStorage.getItem("id"));
     dogCard.classList.add("dog__card");
     name.classList.add("dog__name");
     breed.classList.add("dog__breed");
     photo.classList.add("dog__photo");
     owner.classList.add("dog__owner");
+    owner.href = "";
+    owner.id = dog.owner;
 
     name.innerText = dog.name;
     breed.innerText = dog.breed;
     photo.src = dog.image;
     photo.alt = "photo of " + dog.name;
-    owner.innerText = dog.owner;
+    owner.innerText = "Contact owner";
+    owner.addEventListener("click", (event) => {
+      event.preventDefault;
+      fetch("https://dogs-rest.herokuapp.com/v1/users/" + event.target.id, {})
+        .then((response) => response.json())
+        .then((data) => {
+          owner.innerText = data.email;
+        })
+        .catch(console.error);
+    });
 
     dogCard.appendChild(owner);
     dogCard.appendChild(photo);
