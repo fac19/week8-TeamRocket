@@ -1,92 +1,73 @@
-import query from "../query.js";
+import h from "./createElement.js";
+
 const logoutLink = document.querySelector("#navbar__links--logout");
 
 logoutLink.innerHTML = `<a href="/logout" class="navbar__links--logout--link">LOGOUT</a>`;
 
+const app = document.querySelector("#app");
+app.innerHTML = "";
+
+function createPage(dogs) {
+  const title = h(
+    "h2",
+    { className: "see_dogs__heading" },
+    "Bark up the right tree today 🦴"
+  );
+  const toggle = h("button", { className: "see-dogs__toggle" }, "See my doggo");
+  toggle.addEventListener("click", dogToggle);
+  app.append(title, toggle);
+
+  const dogList = dogs.map((dog) => {
+    if (dog.image) {
+      const owner = h("button",{ className: "dog__owner", href: "#", id: `${dog.owner}` },"Contact owner");
+      owner.addEventListener("click", (event) => {
+        event.preventDefault;
+        fetch("https://dogs-rest.herokuapp.com/v1/users/" + event.target.id, {})
+          .then((response) => response.json())
+          .then((data) => {
+            owner.innerText = data.email;
+          })
+          .catch(console.error);
+      });
+      const photo = h("img", {
+        className: "dog__photo",
+        src: `${dog.image}`,
+        loading: "lazy",
+        alt: `photo of ${dog.name}`,
+      });
+      const name = h("h3", { className: "dog__name" }, dog.name);
+      const breed = h("p", { className: "dog__breed" }, dog.breed);
+      if (dog.owner == localStorage.getItem("id")){
+        return h("article", { className: "dog__card dog--hidden" }, photo, name, breed);
+      }
+      else {
+        return h("article", { className: "dog__card" }, owner, photo, name, breed);
+      }
+    }
+  }).filter(a => a);
+
+  app.append(...dogList);
+}
+
 function dogToggle() {
-  const dogs = document.querySelectorAll(".dog");
+  const dogs = document.querySelectorAll(".dog__card");
+  const toggle = document.querySelector(".see-dogs__toggle");
   dogs.forEach((dog) => {
     dog.classList.toggle("dog--hidden");
   });
-}
 
-function createDogElement(dogArr) {
-  const app = document.querySelector("#app");
-  const pageHeading = document.createElement("h2");
-  pageHeading.textContent = "Bark up the right tree today 🦴";
-  pageHeading.classList.add("see_dogs__heading");
-  const toggle = document.createElement("button");
-  toggle.textContent = "See my doggo";
-  toggle.classList.add("see-dogs__toggle");
-  toggle.addEventListener("click", dogToggle);
-
-  toggle.addEventListener("click", () => {
-    if (toggle.textContent === "See my doggo") {
-      toggle.textContent = "See other doggos";
-    } else {
-      toggle.textContent = "See my doggo";
-    }
-  });
-
-  app.appendChild(pageHeading);
-  app.append(toggle);
-  dogArr.map((dog) => {
-    const dogCard = document.createElement("article");
-    const name = document.createElement("h2");
-    const breed = document.createElement("p");
-    const photo = document.createElement("img");
-    const owner = document.createElement("button");
-
-    dogCard.classList.add("dog");
-    if (dog.owner == localStorage.getItem("id")) {
-      dogCard.classList.add("dog--hidden");
-    }
-
-    dogCard.classList.add("dog__card");
-    name.classList.add("dog__name");
-    breed.classList.add("dog__breed");
-    photo.classList.add("dog__photo");
-    owner.classList.add("dog__owner");
-    owner.href = "";
-    owner.id = dog.owner;
-
-    name.innerText = dog.name;
-    breed.innerText = dog.breed;
-    photo.src = dog.image;
-    photo.alt = "photo of " + dog.name;
-
-    photo.onerror = function() {
-      photo.src =
-        "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg";
-    };
-
-    owner.innerText = dog.owner;
-
-    owner.innerText = "Contact owner";
-    owner.addEventListener("click", (event) => {
-      event.preventDefault;
-      fetch("https://dogs-rest.herokuapp.com/v1/users/" + event.target.id, {})
-        .then((response) => response.json())
-        .then((data) => {
-          owner.innerText = data.email;
-        })
-        .catch(console.error);
-    });
-
-    dogCard.appendChild(owner);
-    dogCard.appendChild(photo);
-    dogCard.appendChild(name);
-    dogCard.appendChild(breed);
-
-    app.appendChild(dogCard);
-  });
+  if (toggle.textContent === "See my doggo") {
+    toggle.textContent = "See other doggos";
+  } else {
+    toggle.textContent = "See my doggo";
+  }
 }
 
 function home() {
   fetch("https://dogs-rest.herokuapp.com/v1/dogs/", {})
     .then((response) => response.json())
     .then((dogs) => {
-      createDogElement(dogs);
+      createPage(dogs);
     })
     .catch(console.error);
 }
