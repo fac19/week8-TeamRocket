@@ -5,6 +5,7 @@ const logoutLink = document.querySelector("#navbar__links--logout");
 logoutLink.innerHTML = `<a href="/logout" class="navbar__links--logout--link">LOGOUT</a>`;
 
 const app = document.querySelector("#app");
+app.innerHTML = "";
 
 function createPage(dogs) {
   const title = h(
@@ -17,42 +18,33 @@ function createPage(dogs) {
   app.append(title, toggle);
 
   const dogList = dogs.map((dog) => {
-    const owner =
-      dog.owner == localStorage.getItem("id")
-        ? h(
-            "button",
-            {
-              className: "dog__owner dog--hidden",
-              href: "",
-              id: `${dog.owner}`,
-            },
-            "Contact owner"
-          )
-        : h(
-            "button",
-            { className: "dog__owner", href: "", id: `${dog.owner}` },
-            "Contact owner"
-          );
-    const photo = h("img", {
-      className: "dog__photo",
-      src: `${dog.image}`,
-      loading: "lazy",
-      alt: `photo of ${dog.name}`,
-    });
-    owner.addEventListener("click", (event) => {
-      event.preventDefault;
-      fetch("https://dogs-rest.herokuapp.com/v1/users/" + event.target.id, {})
-        .then((response) => response.json())
-        .then((data) => {
-          owner.innerText = data.email;
-        })
-        .catch(console.error);
-    });
-    const name = h("h3", { className: "dog__name" }, dog.name);
-    const breed = h("p", { className: "dog__breed" }, dog.breed);
-
-    return h("article", { className: "dog__card" }, owner, photo, name, breed);
-  });
+    if (dog.image) {
+      const owner = h("button",{ className: "dog__owner", href: "#", id: `${dog.owner}` },"Contact owner");
+      owner.addEventListener("click", (event) => {
+        event.preventDefault;
+        fetch("https://dogs-rest.herokuapp.com/v1/users/" + event.target.id, {})
+          .then((response) => response.json())
+          .then((data) => {
+            owner.innerText = data.email;
+          })
+          .catch(console.error);
+      });
+      const photo = h("img", {
+        className: "dog__photo",
+        src: `${dog.image}`,
+        loading: "lazy",
+        alt: `photo of ${dog.name}`,
+      });
+      const name = h("h3", { className: "dog__name" }, dog.name);
+      const breed = h("p", { className: "dog__breed" }, dog.breed);
+      if (dog.owner == localStorage.getItem("id")){
+        return h("article", { className: "dog__card dog--hidden" }, photo, name, breed);
+      }
+      else {
+        return h("article", { className: "dog__card" }, owner, photo, name, breed);
+      }
+    }
+  }).filter(a => a);
 
   app.append(...dogList);
 }
